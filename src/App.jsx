@@ -7,8 +7,8 @@ import Showbox from './components/showbox'
 function App() {
   let [news,setNews] = useState([]);
 
- const API_KEY = 'f7f572217cdfcff48df4ef2fce4e6de8'
- const URL = 'https://gnews.io/api/v4/search?q='
+ const API_KEY = 'your_api-key'
+ const URL = 'your_channel_url'
 
 
   async function fetchNews(query){
