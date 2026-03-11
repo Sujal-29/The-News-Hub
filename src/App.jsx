@@ -49,8 +49,9 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      let newsUrl  = `${URL}?q=${query}&lang=en&country=us&max=100&apikey=${API_KEY}`;
-      let res = await fetch(newsUrl);
+      // let newsUrl  = `${URL}?q=${query}&lang=en&country=us&max=100&apikey=${API_KEY}`;
+      // let res = await fetch(newsUrl);
+      let res = await fetch(`/api/news?q=${query}`);
       
       if (!res.ok) {
         throw new Error(`API Error: ${res.status} ${res.statusText}`);
