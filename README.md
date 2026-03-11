@@ -8,11 +8,16 @@ News-Hub is a modern, responsive web application that serves as a centralized pl
 
 - **News Fetching**: Retrieves news articles from the GNews API based on user-defined search queries
 - **Search Functionality**: Allows users to search for news on specific topics (e.g., "Anime", "TV", "Politics")
+- **Quick Category Buttons**: One-click access to popular categories (Technology, Sports, Politics, Entertainment, Business, Health)
 - **Article Display**: Presents news articles in an attractive card-based layout featuring:
   - Article images
   - Headlines and descriptions
   - Source information and publication dates
   - Direct links to full articles
+- **Bookmarks/Save for Later**: Save articles to read later with persistent localStorage storage
+- **Dark/Light Mode**: Toggle between dark and light themes with preference persistence
+- **Error Handling**: Comprehensive error messages and user feedback
+- **Loading States**: Visual loading indicators while fetching data
 - **Default Content**: Loads news about "India" by default on application startup
 - **Responsive Design**: Optimized for various screen sizes including mobile devices
 - **Real-time Updates**: Fetches up to 100 articles per search query
@@ -86,15 +91,66 @@ The-News-Hub/
 ## Features
 
 - 🔍 **Advanced Search**: Search news by keywords or topics
+- 🏷️ **Quick Categories**: One-click buttons for Technology, Sports, Politics, Entertainment, Business, and Health
+- 📚 **Bookmarks**: Save articles to read later - persisted in browser storage
+- 🌓 **Dark/Light Mode**: Toggle between themes with preference saved
 - 📱 **Mobile Responsive**: Optimized for all device sizes
 - ⚡ **Fast Loading**: Built with Vite for optimal performance
-- 🎨 **Modern UI**: Clean, dark-themed interface with smooth animations
+- 🎨 **Modern UI**: Clean interface with smooth animations and gradient effects
 - 🌐 **Global News**: Access news from various international sources
 - 🔄 **Real-time Data**: Fetches latest news articles dynamically
+- ⚠️ **Error Handling**: User-friendly error messages and loading states
+- 💾 **Local Storage**: Saves bookmarks and theme preference automatically
 
 ## API Key Setup
 
-The application uses the GNews API. Make sure to obtain an API key from [GNews](https://gnews.io/) and update the `API_KEY` variable in `src/App.jsx` if needed.
+The application uses the **GNews API**. 
+
+### Steps to configure:
+
+1. **Get API Key**: Obtain an API key from [GNews](https://gnews.io/)
+
+2. **Create `.env.local` file** in the project root:
+   ```
+   VITE_API_KEY=your_gnews_api_key_here
+   VITE_API_URL=https://gnews.io/api/v4/search
+   ```
+
+3. **Example `.env.local`**:
+   ```
+   VITE_API_KEY=abc123def456xyz789
+   VITE_API_URL=https://gnews.io/api/v4/search
+   ```
+
+⚠️ **Important**: Never commit `.env.local` to version control. It's already in `.gitignore`
+
+## New Features (Latest Update)
+
+### 🌓 Dark/Light Mode
+- Toggle between dark and light themes with the sun/moon button in the navbar
+- Your theme preference is automatically saved and persists across sessions
+- All UI elements adapt seamlessly to the selected theme
+
+### 📚 Bookmarks - Save for Later
+- Click the heart ❤️ icon on any article to bookmark it
+- Access all saved articles via the bookmarks button (📚) in the navbar
+- Bookmarks are stored in your browser and persist even after closing the app
+- Remove bookmarks anytime by clicking the filled heart icon
+
+### 🏷️ Quick Category Buttons
+- Search by popular categories with a single click:
+  - Technology (💻)
+  - Sports (⚽)
+  - Politics (🏛️)
+  - Entertainment (🎬)
+  - Business (💼)
+  - Health (⚕️)
+- Category buttons appear below the search bar for quick access
+
+### 🎨 Beautiful Typography
+- Elegant **Playfair Display** serif font for the brand logo
+- Responsive text sizing that adapts to different screen sizes
+- Orange-to-red gradient effect on "News" in the header
 
 ## Contributing
 
