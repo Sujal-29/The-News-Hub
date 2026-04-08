@@ -17,9 +17,6 @@ function App() {
   });
   let [showBookmarks, setShowBookmarks] = useState(false);
 
- const API_KEY = import.meta.env.VITE_API_KEY;
- const URL = import.meta.env.VITE_API_URL;
-
   const toggleTheme = () => {
     const newTheme = !darkMode;
     setDarkMode(newTheme);
@@ -49,10 +46,7 @@ function App() {
     try {
       setLoading(true);
       setError(null);
-      // let newsUrl  = `${URL}?q=${query}&lang=en&country=us&max=100&apikey=${API_KEY}`;
-      // let res = await fetch(newsUrl);
-      // let res = await fetch(`/api/news?q=${query}`);
-      let newsUrl = `${URL}?q=${query}&lang=en&max=10&token=${API_KEY}`;
+      let newsUrl = `/api/news?q=${encodeURIComponent(query)}&lang=en&max=10`;
       let res = await fetch(newsUrl);
 
       
